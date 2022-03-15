@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="btnVotoPericlaso()"><img style="width: 150px;" src="https://i.pinimg.com/550x/ed/8e/d3/ed8ed355b2f3c987ec8a780f61e5ac18.jpg" alt="Periclaso"></button><br>
+    <span>Votos: <b id="votoPericles">0</b></span><br><br> 
+    <br>
+
+    <button onclick="btnVotoRacionais()"><img style="width: 150px;" src="https://www.hypeness.com.br/1/2018/11/DjamilaRacionais_horizontal.jpg" alt="Racionais"></button>
+    <br><span>Votos: <b id="votoRacionais">0</b></span><br>
+    <br>
+
+    <span">Voto Total: <b id="votoTotal"> 0</b></span>
+</body>
+
+</html>
+<script>
+     
+    var total = 1;
+
+    var somaRacionais = 1;
+
+    var somaPericles = 1;
+
+    function btnVotoPericlaso() {
+
+        votoPericles.innerHTML = somaPericles++;
+
+        votoTotal.innerHTML = total++;
+
+    }
+
+    function btnVotoRacionais() {
+        
+        votoRacionais.innerHTML = somaRacionais++;
+
+        votoTotal.innerHTML = total++;
+
+    }
+
+</script>

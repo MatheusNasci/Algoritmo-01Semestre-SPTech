@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <span id="span_mensagem">
+        <p style="color: green">Voto na <u>Praça é nossa</u>: <b id="b_praca">0</b></p>
+        <p style="color: green">Voto na <u>Zorra Total</u>: <b id="b_zorra">0</b></p><br>
+        <p style="color: green">Total de votos: <b id="b_votos">0</b></p>
+    </span>
+
+    <button onclick="btnPraca()">Votar na Praça é Nossa</button>
+    <button onclick="btnZorra()">Votar na Zorra Total</button>
+
+</body>
+
+</html>
+<script>
+
+    var votosTotal = 1;
+
+    var votoPraca = 1;
+
+    var votoZorra = 1;
+
+    function btnPraca() {
+
+        b_praca.innerHTML = votoPraca++;
+
+        b_votos.innerHTML = votosTotal++;
+    }
+
+    function btnZorra() {
+
+        b_zorra.innerHTML = votoZorra++;
+
+        b_votos.innerHTML = votosTotal++;
+    }
+
+</script>

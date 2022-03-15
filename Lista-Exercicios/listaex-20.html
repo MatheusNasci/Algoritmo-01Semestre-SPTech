@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Digite salário:</h2>
+    <input id="inpt_salario" type="text" placeholder=""><br>
+    <br>
+
+    <button onclick="btnSalario()">Confirmar Salário</button>
+    <button onclick="btnPagar100()">Pagar conta de 100</button>
+    <button onclick="btnPagar500()">Pagar conta de 500</button>
+    <button onclick="btnGanharLt()">Ganhar 2000 na loteria</button><br>
+    <br>
+
+    <span id="span_mensagem"></span>
+
+</body>
+
+</html>
+
+<script>
+
+    var salario = Number(inpt_salario.value);
+
+    function btnSalario() {
+
+        span_mensagem.innerHTML += `<b>Grana atual: R$ ${salario.toFixed(2)}</b><br>`;
+    }
+
+    function btnPagar100() {
+
+        salario -= 100;
+
+        span_mensagem.innerHTML += `<b>Grana atual: <span style="color: red">R$ ${(salario).toFixed(2)}</span></b><br>`;
+
+    }
+
+    function btnPagar500() {
+
+        salario -= 500;
+
+        span_mensagem.innerHTML += `<b>Grana atual:<span style="color: red"> R$ ${(salario).toFixed(2)}</span></b><br>`;
+    }
+
+    function btnGanharLt() {
+
+        salario += 2000;
+
+        span_mensagem.innerHTML += `<b>Grana atual: <span style="color: green"> R$ ${(salario).toFixed(2)}</span></b><br>`;
+    }
+
+</script>
