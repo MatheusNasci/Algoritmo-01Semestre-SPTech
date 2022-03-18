@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Quais alimentos você quer comprar?</h2>
+
+    <select id="op_produto">
+        <option value="4.69">Leite</option>
+        <option value="2.50">Sabonete</option>
+        <option value="5.78">Manteiga</option>
+        <option value="2.34">Sal</option>
+    </select>
+
+    <button onclick="btn_vervalor()">Ver valor</button>
+
+</body>
+
+</html>
+<script>
+
+    function btn_vervalor() {
+
+        var valor = op_produto.value;
+
+        alert(`Custa: R$ ${valor}`);
+    }
+
+</script>

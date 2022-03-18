@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Exercícios 04</title>
+</head>
+<body>
+    <h1>Calcule sua Frequência</h1>
+    Qual seu nome?<br>
+    <input id="nome" type="text"><br>
+    <br>
+
+    Qual total de aulas do curso?<br>
+    <input id="totalCurso" type="text"><br>
+    <br>
+
+    Quantidade de falta:<br>
+    <input id="qtdFaltas" type="text"><br>
+    <br>
+
+    <button onclick="btnCalcular()">Calcular</button><br>
+    <br>
+
+    <div id="div_mensagem"></div>
+    <div id="barraPresenca" style="display: none; background-color: darkred; height: 20px;"></div>
+</body>
+</html>
+<script>
+
+    function btnCalcular() {
+
+        var nomeAluno = nome.value; 
+        var aulas = Number(totalCurso.value);
+        var faltas = Number(qtdFaltas.value);
+
+        var quantidadeFalta = 100 - (faltas / aulas) * 100;
+
+        div_mensagem.innerHTML = `Olá, ${nomeAluno}! Sua frequência foi de ${quantidadeFalta}%`;
+
+        barraPresenca.style.display = 'block';
+
+        barraPresenca.style.width = `${quantidadeFalta}%`;
+
+        
+
+    }
+
+</script>
