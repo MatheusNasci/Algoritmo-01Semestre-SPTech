@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Atendimento </title>
+</head>
+
+<body>
+    Como está meu atendimento?<br>
+    <br>
+    <select id="select_option">
+        <option value="1">★</option>
+        <option value="2">★★</option>
+        <option value="3">★★★</option>
+        <option value="4">★★★★</option>
+        <option value="5">★★★★★</option>
+    </select>
+
+    <button onclick="btnAvaliacao()">Enviar Avaliação</button><br>
+    <br>
+
+    Média Atual: <span id="span_media">0</span><br>
+    Total Avaliaçoes: <span id="span_total">0</span>
+
+</body>
+
+</html>
+<script>
+
+    var totalAvaliacao = 0;
+    var avaliacao = 0;
+    var qtdEstrela = 0;
+
+    function btnAvaliacao() {
+
+        avaliacao = Number(select_option.value);
+
+        totalAvaliacao++;
+
+        span_total.innerHTML = totalAvaliacao;
+
+        qtdEstrela += avaliacao;
+
+        var media = qtdEstrela / avaliacao;
+
+        span_media.innerHTML = media;
+
+    }
+
+</script>

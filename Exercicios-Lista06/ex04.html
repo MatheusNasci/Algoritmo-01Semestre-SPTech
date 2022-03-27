@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Valor da pizza:<br>
+    <input id="valorPizza" type="text"><br>
+    Quantos amigos reunidos:<br>
+    <input id="qtdAmigos" type="text"><br><br>
+
+    <button onclick="btnCalcular()">Rola a pizza?</button>
+    <span id="span_mensagem"></span>
+</body>
+
+</html>
+<script>
+
+    function btnCalcular() {
+        var pizza = Number(valorPizza.value);
+        var amigos = Number(qtdAmigos.value);
+        var resultado = pizza / amigos;
+
+        span_mensagem.innerHTML = `<br><br>Cada amigo vai pagar R$ ${resultado.toFixed(2)} pela pizza. `;
+
+        if (resultado > 20) {
+            span_mensagem.innerHTML += `<span style="color: blue"><b><i><u>Deu ruim! Pizza muito cara!</u></i></b></span>`;
+        }
+    }
+
+</script>

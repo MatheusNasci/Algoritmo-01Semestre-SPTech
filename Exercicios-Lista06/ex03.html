@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quais foram suas notas:<br><br>
+    <input id="nota1" type="text"><br><br>
+    <input id="nota2" type="text"><br><br>
+    <input id="nota3" type="text"><br><br>
+
+    <button onclick="btn_calcular()">Calcular nota</button><br>
+    <br>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+
+    function btn_calcular() {
+
+        var n1 = Number(nota1.value);
+        var n2 = Number(nota2.value);
+        var n3 = Number(nota3.value);
+
+        var media = (n1 + n2 + n3)/3;
+
+        div_mensagem.innerHTML = `Sua média foi de ${media.toFixed(1)}`;
+
+        if (media > 9.4) {
+            div_mensagem.innerHTML += `Parabéns você é um aluno fora de série!`
+        }
+
+    }
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Qual hobby você quer praticar:</h1>
+    <select id="select_option" onchange="mostrar()">
+        <option value=""></option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Dancer_With_Red_Dress_Emoji_400x400.png">Dançar
+        </option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Virus_Emoji_400x400.png">Jogar Video Game
+        </option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Man_Bowing_Emoji_400x400.png">Assistir
+            TV/streaming</option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Sign_of_the_Horns_Emoji_400x400.png">Ouvir Rock
+        </option>
+    </select><br>
+    <br>
+
+    <img id="idHobby" src="">
+
+</body>
+
+</html>
+<script>
+
+    function mostrar() {
+
+        var tamanhoImg = 50;
+
+        var hobby = select_option.value;
+
+        idHobby.src = hobby;
+
+        tamanhoImg += 10;
+
+        idHobby.style.width = `${aumentarImg}px`;
+
+
+    }
+
+</script>

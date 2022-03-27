@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Meu Cofrinho:</h1>
+    <select name="" id="select_op">
+        <option value="1">R$ 1,00</option>
+        <option value="50">R$ 50,00</option>
+        <option value="1250">R$ 1250,00</option>
+        <option value="2000">R$ 2000,00</option>
+    </select><br>
+    <br>
+    <button onclick="btnDepositar()">Depositar valor</button>
+    <button onclick="btnGastar()">Gastar</button><br>
+    <br>
+
+    <span>
+        O saldo do cofrinho é de: R$ <span id="span_saldo"><b>99,99</b></span><br>
+        Média dos depósitos: R$ <span id="span_media"><b>99,99</b></span><br>
+        A quantidade de operações foi: <span id="span_op">99</span><br>
+    </span>
+</body>
+
+</html>
+<script>
+    var saldo = 99.99;
+    var operacoes = 99;
+    var mediaDeposito = 0;
+
+    function btnDepositar() {
+
+        operacoes++;
+
+        var valor = Number(select_op.value);
+
+        var deposito = saldo += valor;
+
+        span_saldo.innerHTML = deposito.toFixed(2);
+        var qtdOperacoes = span_op.innerHTML++;
+
+        mediaDeposito = deposito / qtdOperacoes;
+
+        span_media.innerHTML = mediaDeposito.toFixed(2);
+
+    }
+
+    function btnGastar() {
+
+        saldo = 0;
+
+        span_saldo.innerHTML = saldo;
+
+        operacoes = 0;
+
+        span_op.innerHTML = operacoes;
+
+        mediaDeposito = 0;
+
+        span_media.innerHTML = mediaDeposito;
+    }
+</script>

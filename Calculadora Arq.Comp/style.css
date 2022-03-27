@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #606d80;
+}
+
+.card-container{
+    background-color: whitesmoke;
+    margin:10%;
+    padding: 2% 5% 2% 5%;
+    text-align: center;
+    box-shadow: 15px 10px 20px black;
+}
+
+.card-container button{
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 7px;
+}
+
+.card-container input{
+    padding: 2px;
+}
+
+.card-container h1{
+    padding-bottom: 15px;
+}
+
+

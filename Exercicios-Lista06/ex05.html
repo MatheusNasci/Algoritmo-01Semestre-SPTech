@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantos você kWh consumida por dia:<br><br>
+    <input id="qtdConsumida" type="text"><br><br>
+    <button onclick="btnCalcular()">Calcular conta de luz</button>
+</body>
+
+</html>
+<script>
+
+    function btnCalcular() {
+
+        var qtCons = Number(qtdConsumida.value);
+        var resultado = (qtCons * 0.85) * 30;
+
+        if (resultado < 100) {
+
+            resultado = resultado * 0.9
+
+            alert(`Conta a pagar: R$ ${resultado.toFixed(2)}`)
+        
+        }
+
+        if (resultado >= 100) {
+
+            alert(`Conta a pagar: R$ ${resultado.toFixed(2)}`);
+
+        }
+    }
+
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Monte sua PIZZA</h1>
+    escolha o sabor da pizza:<br>
+    <select id="select_pizza">
+        <option value="23">Muçarela à R$ 23,00 </option>
+        <option value="24">Calabresa à R$ 24,00</option>
+        <option value="26">Atum à R$ 26,00</option>
+        <option value="30">Portuguesa à R$ 30,00</option>
+    </select><br><br>
+
+    Escolha os ingredientes adicionais:<br>
+    <select id="select_ing">
+        <option value="">Sem Ingrediente Adicional</option>
+        <option value="2">Queijo à R$ 2,00</option>
+        <option value="2.50">Presunto à R$ 2,50</option>
+        <option value="1.50">Ovo à R$ 1,50</option>
+        <option value="4">Palmito à R$ 4,00</option>
+        <option value="3.50">Frango à R$ 3,50</option>
+        <option value="3">Catupiry à R$ 3,00</option>
+
+    </select><br><br>
+    
+    <select id="select_ing2">
+        <option value="">Sem Ingrediente Adicional</option>
+        <option value="2">Queijo à R$ 2,00</option>
+        <option value="2.50">Presunto à R$ 2,50</option>
+        <option value="1.50">Ovo à R$ 1,50</option>
+        <option value="4">Palmito à R$ 4,00</option>
+        <option value="3.50">Frango à R$ 3,50</option>
+        <option value="3">Catupiry à R$ 3,00</option>
+    </select><br><br>
+
+    <button onclick="btnCalcular()">Calcular preço de pizza</button><br>
+    <br>
+    Total Pizza: R$ <span id="total">0,00</span>
+</body>
+</html>
+<script>
+
+    function btnCalcular() {
+        
+        var valorPizza = Number(select_pizza.value);
+        var ingAdd = Number(select_ing.value);
+        var ingAdd2 = Number(select_ing2.value);
+        var resultado = valorPizza + ingAdd + ingAdd2;
+        
+        total.innerHTML = resultado.toFixed(2);
+
+    }
+
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Consumo de Refrigerante</h2>
+    Pergunte quantas latinhas de refrigerante toma por dia?<br><br>
+    <input id="qtdLatinha" type="text"><br><br>
+    <button onclick="btnCalcular()">Quantos refris?</button><br>
+    <br>
+
+    <span id="mostrar"></span>
+</body>
+
+</html>
+<script>
+
+    function btnCalcular() {
+
+        var quantidade = Number(qtdLatinha.value);
+        var dias = 365;
+
+        var resultado = quantidade * dias
+
+        mostrar.innerHTML = resultado;
+
+        if (resultado > 500) {
+
+            mostrar.innerHTML = `${resultado} Latinhas. Cuidado com a diabetes!`;
+        }
+
+
+    }
+
+</script>
