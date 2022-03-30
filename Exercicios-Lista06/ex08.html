@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Elevador</h1>
+
+    Quantos homens:
+    <input type="text" id="Homens"><br>
+    <br>
+    Quantas mulheres:
+    <input type="text" id="Mulheres"><br>
+    <br>
+
+    <button onclick="Calcular()">Ligar elevador</button><br>
+    <br>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function Calcular(params) {
+        var qtdHomens = Number(Homens.value);
+        var qtdMulheres = Number(Mulheres.value);
+
+        var pesoHomen = 90;
+        var pesoMulher = 70;
+
+        var totalPH = 90 * qtdHomens;
+        var totalPM = 70 * qtdMulheres;
+
+        var resultado = totalPH + totalPM;
+        var perdaPeso = resultado - 500;
+
+        if (resultado < 500) {
+
+            div_mensagem.innerHTML = `<span style="color:green">Elevador vai se mover, pois está com 
+                ${resultado} kg</span>`;
+
+        } else {
+
+            div_mensagem.innerHTML = `<span style="color:red">Precisa perder 
+                ${perdaPeso} kg para mover o elevador</span>`;
+
+        }
+
+    }
+</script>
