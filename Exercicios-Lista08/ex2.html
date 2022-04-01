@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Qual sua renda familiar:<br>
+    <input type="text" id="renda" onkeyup="analisar()"><br><br>
+    <!-- <button onclick="analisar()">Analisar Renda</button> -->
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var valor = renda.value;
+
+        if (valor == "") {
+            mensagem.innerHTML = ``;
+        } else {
+            if (valor <= 250) {
+                mensagem.innerHTML = `Classe E, mó pobre`
+            } else {
+                if (valor <= 900) {
+                    mensagem.innerHTML = `Classe D, passando fome`
+                } else {
+                    if (valor <= 2500) {
+                        mensagem.innerHTML = `Classe C, vendendo trufa`
+                    } else {
+                        if (valor <= 9500) {
+                            mensagem.innerHTML = `Classe B, da pra viver bem`
+                        } else {
+                            mensagem.innerHTML = `Classe A, rico demais`
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+    }
+</script>
