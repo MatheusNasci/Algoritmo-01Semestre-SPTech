@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome da empresa:<br>
+    <input type="text" id="nomeEmpresa"><br>
+    <br>
+    Digite o valor da bolsa da empresa:<br>
+    <input type="text" id="valorBolsa"><br>
+    <br>
+    Digite o valor do VR da empresa:<br>
+    <input type="text" id="valorVR"><br>
+    <br>
+    Digite o tempo de descolamento da empresa para a SPTech<br>
+    <input type="text" id="deslocamento"><br>
+    <br>
+
+    <button onclick="seila()">É preferida?</button><br>
+    <br>
+
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function seila() {
+
+        var nome = nomeEmpresa.value;
+        var bolsa = valorBolsa.value;
+        var vr = valorVR.value;
+        var des = deslocamento.value;
+
+        if (nome == '' ||bolsa == '' || vr == '' || des == '') {
+            alert('Preencha todos os campos')
+        } else if (bolsa > 1800 || vr >= 20 || des <= 30) {
+           msg.innerHTML = `A empresa ${nome} é uma de suas preferências`;
+        } else{
+            msg.innerHTML = `A empresa ${nome} está fora da sua lista`;
+        }
+    }
+</script>

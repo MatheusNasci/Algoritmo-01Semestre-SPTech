@@ -22,27 +22,17 @@
 
         if (valor == "") {
             mensagem.innerHTML = ``;
+        } else if (valor <= 250) {
+            mensagem.innerHTML = `Classe E, passando fome`
+        } else if (valor <= 900) {
+            mensagem.innerHTML = `Classe D, mó pobre`
+        } else if (valor <= 2500) {
+            mensagem.innerHTML = `Classe C, vendendo trufa`
+        } else if (valor <= 9500) {
+            mensagem.innerHTML = `Classe B, da pra viver bem`
         } else {
-            if (valor <= 250) {
-                mensagem.innerHTML = `Classe E, mó pobre`
-            } else {
-                if (valor <= 900) {
-                    mensagem.innerHTML = `Classe D, passando fome`
-                } else {
-                    if (valor <= 2500) {
-                        mensagem.innerHTML = `Classe C, vendendo trufa`
-                    } else {
-                        if (valor <= 9500) {
-                            mensagem.innerHTML = `Classe B, da pra viver bem`
-                        } else {
-                            mensagem.innerHTML = `Classe A, rico demais`
-                        }
-                    }
-                }
-            }
+            mensagem.innerHTML = `Classe A, rico demais`
         }
-
-
-
     }
+
 </script>

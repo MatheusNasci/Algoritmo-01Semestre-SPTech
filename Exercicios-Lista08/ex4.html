@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite seu peso:<br>
+    <input type="text" id="peso" onkeyup="calcular()"><br>
+    <br>
+
+    <span id="span_msg"></span>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var qtdPeso = peso.value;
+
+        if (qtdPeso == "") {
+            span_msg.innerHTML = ""
+        }else if (qtdPeso <= 13.5) {
+            span_msg.innerHTML = "Abaixo do peso";
+        } else if (qtdPeso >= 21.2) {
+            span_msg.innerHTML = "Acima do peso";
+        } else if (qtdPeso == 18.3) {
+            span_msg.innerHTML = "Peso Perfeito";
+        } else{
+            span_msg.innerHTML = "Peso na média";
+        }
+    }
+</script>

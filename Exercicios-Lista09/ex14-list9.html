@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 14</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Intervalo de Altura</h1>
+        Piloto de Corrida<br>
+        <br>
+        Altura inicial:<br>
+        <input type="text" id="altura1"><br>
+        <br>
+
+        Altura final:<br>
+        <input type="text" id="altura2"><br>
+        <br>
+
+        Jogador Basquete<br>
+        <br>
+        Altura inicial:<br>
+        <input type="text" id="altura3"><br>
+        <br>
+
+        Altura final:<br>
+        <input type="text" id="altura4"><br>
+        <br>
+
+        <button onclick="btnSelect()">Selecionar</button>
+    </div>
+    <span id="msg"></span>
+
+    <div id="container2" style="display: none">
+        Digite seu nome:<br>
+        <input type="text" id="name"><br>
+        <br>
+
+        Digite sua altura:<br>
+        <input type="text" id="alturafinal">
+
+        <select name="" id="select_op">
+            <option value="1">Piloto</option>
+            <option value="2">Jogador de basquete</option>
+        </select><br>
+        <br>
+
+        <button onclick="calcular()">Verificar</button><br>
+    </div>
+
+    <div id="msg2"></div>
+
+
+</body>
+
+</html>
+<script>
+    var pilotoi = 0;
+    var pilotof = 0;
+
+    var basquetei = 0;
+    var basquetef = 0;
+
+    function btnSelect() {
+
+        pilotoi = altura1.value;
+        pilotof = altura2.value;
+
+        basquetei = altura3.value;
+        basquetef = altura4.value;
+
+        if (pilotoi <= 1 && pilotof > pilotoi) {
+            alert('Altura inadequada para um piloto de corrida');
+        } else if (basquetei < 1.5 && basquetef > basquetei) {
+            alert('Altura inadequada para um jogador de basquete')
+        } else {
+            container.style.display = 'none'
+            msg.innerHTML = `<h1>Processo de Seleção de novos atletas</h1><br>
+            Critério de Seleção de piloto – altura entre ${pilotoi} até ${pilotof}<br>
+            Critério de Seleção de jogador de basquete – altura entre ${basquetei} e ${basquetef}<br><br>`;
+            container2.style.display = 'block'
+        }
+    }
+
+    function calcular() {
+        var nome = name.value;
+        var altura = alturafinal.value;
+        var select = select_op.value;
+
+        if (select == 1 && altura >= pilotoi) {
+            msg2.innerHTML += `O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto<br><br>`;
+        } else if (select == 1 && altura < pilotoi) {
+            msg2.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos<br><br>`;
+        }
+
+        if (select == 2 && altura >= basquetei) {
+            msg2.innerHTML += `O candidato ${nome} com altura de ${altura} participará do processo de seleção de jogador<br><br>`;
+        } else if (select == 2 && altura < basquetei) {
+            msg2.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos<br><br>    `;
+        }
+    }
+</script>
