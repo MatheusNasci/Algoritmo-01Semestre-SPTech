@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Validação Email</h1>
+    Digite seu email:
+    <input type="text" onkeyup="validar()" id="ipt_email"><br>
+    <br>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    function validar() {
+        
+        if ((ipt_email.value).indexOf('@') > 0) {
+            div_msg.innerHTML = '<span style="color:green">E-mail válido</span>';
+        } else{
+            div_msg.innerHTML = '<span style="color:red">E-mail inválido</span>';
+        }
+    }
+</script>

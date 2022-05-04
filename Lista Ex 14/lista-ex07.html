@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número de 20 a 100:
+    <input id="ipt_number" type="number"><br>
+    <button onclick="mostrar()">Adoro múltiplos de 5</button><br>
+    <br>
+
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+
+    function mostrar() {
+
+        var contador = 20;
+        var numero = Number(ipt_number.value);
+
+        msg.innerHTML = ``;
+
+        if (numero > 100){
+            alert(`O número tem que ser menor ou igual a 100`);
+        } else{
+            while (contador <= numero) {
+                msg.innerHTML += `${contador}<br>`;
+                contador++;
+            }
+        }  
+        
+    }
+</script>

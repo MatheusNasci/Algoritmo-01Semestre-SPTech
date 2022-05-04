@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 01</title>
+</head>
+<body>
+    Login<br>
+    <input type="text" id="ipt_login"><br>
+    <br>
+    Senha<br>
+    <input type="text" id="ipt_senha"><br>
+    <br>
+    <button onclick="entrar()">Entrar</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function entrar() {
+        var login = ipt_login.value == 'aidmin';
+        var senha = ipt_senha.value == 'seinha';
+        
+        if (login || senha == '') {
+            alert('Preencha os campos');
+        }else if (login && senha == true) {
+            msg.innerHTML = `<p style="color:blue">Usuário autenticado com sucesso!</p>`;
+        } else if(login == false){
+            msg.innerHTML = `<p style="color:red">Login inválido</p>`;
+        } else if(senha == false){
+            msg.innerHTML = `<p style="color:red">Senha inválido</p>`;
+        } else{
+            msg.innerHTML = `<p style="color:red">Login e Senha inválidos</p>`;
+        }
+    }
+</script>

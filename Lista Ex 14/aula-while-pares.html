@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Entre com o limite inferior:
+    <input id="ipt_inf" type="number"><br>
+    <br>
+    Entre com o limite superior:
+    <input id="ipt_sup" type="number"><br>
+    <br>
+    <button onclick="exibir()">Exibir</button><br>
+    <br>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+
+    function exibir() {
+
+
+        var minimo = Number(ipt_inf.value);
+
+        if (minimo > ipt_sup.value) {
+            alert(`O número máximo tem que ser maior que o minímo`);
+        }
+
+        msg.innerHTML = '';
+
+
+        while (minimo <= ipt_sup.value) {
+            if (minimo % 2 == 0) {
+                msg.innerHTML += `${minimo}<br>`;
+            }
+            
+            minimo++;
+        }
+
+    }
+</script>

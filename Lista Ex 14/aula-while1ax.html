@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While</title>
+</head>
+
+<body>
+    <h1>Epifania de amor</h1>
+    Quantidade de frases de amor:<br>
+    <input type="number" id="ipt_amor">
+    <button onclick="mostrar()">Amor</button>
+    <br>
+
+    <div id="div_msg"></div><br>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+
+        var contador = 5;
+        div_msg.innerHTML = '';
+
+        while (contador <= ipt_amor.value) {
+            div_msg.innerHTML += `${contador} - O amor é lindo!<br>`;
+            contador++;
+        }
+    }
+</script>

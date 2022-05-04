@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+
+    <div id="item1">
+        <h1>Barraca de Morango Sr. Hideo</h1>
+        Digite a quantidade de caixas de morango que foi colhido:<br>
+        <input id="ipt_qtdCaixa" type="number"><br><br>
+        <button onclick="abrir()">Abrir as Vendas</button><br>
+        <div id="div_msg"></div>
+    </div>
+
+    <div style="display: none;" id="item2">
+
+        <h1>Barraca de Morango Sr. Hideo</h1>
+        Digite a quantidade de morangos vendido:<br>
+        <input id="ipt_qtdVenda" type="number"><br>
+        Valor de cada caixa:<br>
+        <input id="ipt_qtdValor" type="number">
+        <span id="div_validacao"></span><br><br>
+
+        <button onclick="validar()">Validar</button>
+        <button onclick="registrar()">Registrar venda</button>
+        <button onclick="encerrar()">Encerrar venda</button>
+
+        <div id="mensagem"></div>
+    </div>
+    
+    <div id="item3" style="display: none;">
+        <h1>Venda de Morangos</h1>
+        <div id="mensagemfim"></div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    
+    var qtdCaixa = 0;
+    var saldo = 0;
+    var qtdVendida = 0;
+    var contador = 0
+    var valor = 0;
+
+    function abrir() {
+
+        qtdCaixa = Number(ipt_qtdCaixa.value);
+
+        if (qtdCaixa < 100) {
+            alert('Com esse volume de Morangos não dá para abrir as vendas');
+        } else if (qtdCaixa > 2000) {
+            alert('Tudo isso!!! Verificar se a quantidade está correta');
+        } else if (qtdCaixa >= 100 && qtdCaixa <= 2000) {
+            item1.style.display = 'none';
+            item2.style.display = 'block';
+            saldo = qtdCaixa;
+        }
+
+    }
+
+    function validar() {
+
+        qtdVendida = Number(ipt_qtdVenda.value);
+        valor = Number(ipt_qtdValor.value);
+        
+        if (qtdVendida < 20) {
+            if (valor >= 5 && valor <= 6) {
+                div_validacao.innerHTML = `<span style="color: green;">Valor OK</span>`;
+            } else {
+                div_validacao.innerHTML = `<span style="color: red;">Valor errado para essa quantidade vendida</span>`;
+            }
+        }
+
+        if (qtdVendida >= 20 && qtdVendida <= 40) {
+            if (valor >= 4.50 && valor <= 5.50) {
+                div_validacao.innerHTML = `<span style="color: green;">Valor OK</span>`;
+            } else {
+                div_validacao.innerHTML = `<span style="color: red;">Valor errado para essa quantidade vendida</span>`;
+            }
+        }
+
+        if (qtdVendida > 40) {
+            if (valor >= 4 && valor <= 5) {
+                div_validacao.innerHTML = `<span style="color: green;">Valor OK</span>`;
+            } else {
+                div_validacao.innerHTML = `<span style="color: red;">Valor errado para essa quantidade vendida</span>`;
+            }
+        }
+    }
+
+    var qtdVenda = 0;
+
+    function registrar() {
+
+        if (saldo < qtdVenda) {
+            alert("Acabou o estoque")
+        }else{
+
+            qtdVenda = Number (ipt_qtdVenda.value)
+            saldo = saldo - qtdVenda;
+    
+            mensagem.innerHTML += `<br>Com a venda de ${qtdVenda} de caixas de Morango o saldo no restante é de ${saldo}`;
+    
+            contador++
+            
+        }
+
+
+    }
+
+    function encerrar() {
+
+        var totalVenda = valor * contador;
+        var media = totalVenda / contador;
+        
+        item2.style.display = 'none';
+        item3.style.display = 'block';
+
+        mensagemfim.innerHTML = `Saldo de produto = ${saldo}<br>
+
+        Volume total vendido = ${qtdVenda * contador}<br>
+
+        Valor total das vendas = R$ ${totalVenda}<br>
+
+        Valor médio das vendas = R$ ${media}<br>`;
+
+        if (media) {
+            
+        }
+    }
+
+</script>
