@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex19</title>
+</head>
+
+<body>
+    <h1>Fase da Vida</h1>
+    Qual sua idade:
+    <input id="ipt_idade" type="text" onkeyup="mostrar()">
+    <div id="div_msg"></div>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+
+        div_msg.innerHTML = ``;
+
+        var idade = Number(ipt_idade.value);
+
+        if (idade == '') {
+
+            div_msg.innerHTML = '';
+
+        } else {
+
+            for (var contador = 0; contador <= idade; contador++) {
+
+                if (contador >= 0 && contador <= 4) {
+                    div_msg.innerHTML += `${contador}  anos (Primeira Infância)<br>`;
+
+                } else if (contador >= 4 && contador <= 6) {
+                    div_msg.innerHTML += `${contador} anos (Pré-escolar)<br>`;
+
+                } else if (contador >= 6 && contador <= 10) {
+                    div_msg.innerHTML += `${contador} anos (Segunda Infância)<br>`;
+
+                } else if (contador >= 18 && contador <= 50) {
+                    div_msg.innerHTML += `${contador} anos (Adulto)<br>`;
+
+                } else if (contador >= 50 && contador <= 100) {
+                    div_msg.innerHTML += `${contador} anos (Melhor idade)<br>`;
+
+                } else if (contador > 100) {
+                    div_msg.innerHTML += `${contador} anos (Matusalém)<br>`;
+                }
+            }
+        }
+    }
+</script>

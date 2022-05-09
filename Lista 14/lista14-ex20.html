@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex20 - Desafio</title>
+</head>
+
+<body>
+    <h1>Trajeto Aluno SPTech</h1>
+    Quantos ônibus precisa pegar?
+    <input id="onibus" type="text"><br>
+    <br>
+    Quantos trens precisa pegar?
+    <input id="trem" type="text"><br>
+    <br>
+    Quantos metrôs precisa pegar?
+    <input id="metro" type="text"><br>
+    <button onclick="mostrar()">#Partiu Trajeto</button><br>
+    <br>
+    <div id="div_bus"></div>
+    <div id="div_trem"></div>
+    <div id="div_metro"></div>
+
+</body>
+
+</html>
+<script>
+
+    function mostrar() {
+
+        var qtdBus = Number(onibus.value);
+        var qtdTrem = Number(trem.value);
+        var qtdMetro = Number(metro.value);
+
+        for (var contador = 1; contador <= qtdBus; contador++) {
+            div_bus.innerHTML += `<span style="color:red">Pegando o ${contador}º buzão</span><br>`;
+        }
+
+        for (var contador = 1; contador <= qtdTrem; contador++) {
+            div_trem.innerHTML += `<span style="color:green">Pegando o ${contador}º trem</span><br>`;
+        }
+
+        for (var contador = 1; contador <= qtdMetro; contador++) {
+            div_metro.innerHTML += `<span style="color:blue">Pegando o ${contador}º metrô</span><br>`;
+        }
+    }
+
+</script>
